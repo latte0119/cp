@@ -1,0 +1,78 @@
+{
+	"scan_1int":{
+		"prefix":"s",
+		"body":[
+			"scanf(\"%lld\",&${1:a});",
+		]
+	},
+	"scan_2int":{
+		"prefix":"ss",
+		"body":[
+			"scanf(\"%lld%lld\",&${1:a},&${2:b});",
+		]
+	},
+	"scan_3int":{
+		"prefix":"sss",
+		"body":[
+			"scanf(\"%lld%lld%lld\",&${1:a},&${2:b},&${3:c});",
+		]
+	},
+	"scan_4int":{
+		"prefix":"ssss",
+		"body":[
+			"scanf(\"%lld%lld%lld%lld\",&${1:a},&${2:b},&${3:c},&${4:d});",
+		]
+	},
+
+	"dump_1":{
+		"prefix":"d",
+		"body":[
+			"cout<<${1:a}<<endl;"
+		]
+	},
+
+	"latte":{
+		"prefix":"l",
+		"body":[
+			"cout<<\"latte\"<<endl;",
+		]
+	},
+
+	"priority_queue":{
+		"prefix":"pq",
+		"body":[
+			"priority_queue<${1:pint},vector<${1:pint}>,greater<${1:pint}>>${2:que};",
+		]
+	},
+
+
+	"INF":{
+		"prefix":"INF",
+		"body":[
+			"const int INF=1001001001;"
+		]
+	},
+	"INFLL":{
+		"prefix":"INFLL",
+		"body":[
+			"const int INF=1001001001001001001;"
+		]
+	},
+
+	
+	"GCDLCM":{
+		"prefix":"gcdlcm",
+		"body":[
+			"long long gcd(long long a,long long b){",
+			"\twhile(b){",
+			"\t\tswap(a%=b,b);",
+			"\t}",
+			"\treturn a;",
+			"}",
+			"long long lcm(long long a,long long b){",
+			"\treturn a/gcd(a,b)*b;",
+			"}",
+		]
+	},
+	
+}

@@ -1,0 +1,30 @@
+{
+	"ModIntTable":{
+		"prefix":"mtable",
+		"body":[
+			"template<class Mint,int32_t lg>",
+			"struct ModIntTable{",
+			"\tint N;",
+			"\tvector<Mint>facts,finvs,invs;",
+			"\tModIntTable():N(1<<lg),facts(N),finvs(N),invs(N){",
+			"\t\tconst uint32_t mod=Mint(-1).a+1;",
+			"\t\tinvs[1]=1;",
+			"\t\tfor(int i=2;i<N;i++)invs[i]=invs[mod%i]*(mod-mod/i);",
+			"",
+			"\t\tfacts[0]=1;",
+			"\t\tfinvs[0]=1;",
+			"\t\tfor(int i=1;i<N;i++){",
+			"\t\t\tfacts[i]=facts[i-1]*i;",
+			"\t\t\tfinvs[i]=finvs[i-1]*invs[i];",
+			"\t\t}",
+			"\t}",
+			"\tinline Mint fact(int n)const{return facts[n];}",
+			"\tinline Mint finv(int n)const{return finvs[n];}",
+			"\tinline Mint inv(int n)const{return invs[n];}",
+			"\tinline Mint binom(int n,int k)const{return facts[n]*finvs[k]*finvs[n-k];}",
+			"    inline Mint perm(int n,int k)const{return facts[n]*finvs[n-k];} ",
+			"};",
+			"ModIntTable<mint,19>mtable;",
+		]
+	}
+}

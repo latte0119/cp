@@ -1,0 +1,37 @@
+{
+	"DSUOnTree":{
+		"prefix":"sack",
+		"body":[
+			"namespace DSUOnTree{",
+			"\tvoid add(int v){",
+			"\t\t",
+			"\t}",
+			"\tvoid dfs(int v,int p,bool keep){",
+			"\t\tint hv=wt.heavy(v);",
+			"\t\tfor(auto &e:wt[v]){",
+			"\t\t\tif(e.to!=p&&e.to!=hv)dfs(e.to,v,false);",
+			"\t\t}",
+			"",
+			"\t\tif(hv!=-1)dfs(hv,v,true);",
+			"\t\tadd(v);",
+			"\t\tfor(auto &e:wt[v])if(e.to!=p&&e.to!=hv){",
+			"\t\t\tfor(int i=wt.tin(e.to);i<wt.tout(e.to);i++)add(wt.vs(i));",
+			"\t\t}",
+			"",
+			"\t\t//calc",
+			"\t",
+			"\t\tif(!keep){",
+			"\t\t//delete",
+			"\t\t\tfor(int i=wt.tin(v);i<wt.tout(v);i++){",
+			"\t\t\t\tint u=wt.vs(i);",
+			"\t\t\t\t//delete",
+			"\t\t\t}",
+			"\t\t}",
+			"\t}",
+			"\tvoid solve(){",
+			"\t\tdfs(0,-1,false);",
+			"\t}",
+			"}",
+		]
+	}
+}
