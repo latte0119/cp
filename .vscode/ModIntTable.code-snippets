@@ -21,10 +21,19 @@
 			"\tinline Mint fact(int n)const{return facts[n];}",
 			"\tinline Mint finv(int n)const{return finvs[n];}",
 			"\tinline Mint inv(int n)const{return invs[n];}",
-			"\tinline Mint binom(int n,int k)const{return facts[n]*finvs[k]*finvs[n-k];}",
-			"    inline Mint perm(int n,int k)const{return facts[n]*finvs[n-k];} ",
+			"\tinline Mint binom(int n,int k)const{",
+			"\t\tif(n<0||k<0||k>n)return 0;",
+			"\t\treturn facts[n]*finvs[k]*finvs[n-k];",
+			"\t}",
+			"\tinline Mint perm(int n,int k)const{",
+			"\t\tif(n<0||k<0||k>n)return 0;",
+			"\t\treturn facts[n]*finvs[n-k];",
+			"\t}",
+			"\tinline Mint catalan(int n){",
+			"\t\treturn facts[2*n]*finvs[n+1]*finvs[n];",
+			"\t}",
 			"};",
-			"ModIntTable<mint,19>mtable;",
+			"ModIntTable<mint,${1:20}>mt;",
 		]
 	}
 }
