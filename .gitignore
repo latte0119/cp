@@ -1,5 +1,4 @@
-*.out
-*.exe
-*.cpp
+/*.out
+/*.exe
+/*.cpp
 
-!lib/
