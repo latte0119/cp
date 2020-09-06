@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "build",
+            "command": "g++",
+            "args": [
+                "-O2",
+                "-std=c++14",
+                "${file}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent",
+                "clear": true
+            }
+        }
+    ]
+}
