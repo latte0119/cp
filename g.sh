@@ -1,2 +1,2 @@
-g++ -std=c++11 $1.cpp
+g++ -std=c++14 $1.cpp
 
