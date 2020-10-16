@@ -1,7 +1,7 @@
 {
-	"WeightedTree":{
-		"prefix":"Tree",
-		"body":[
+	"WeightedTree": {
+		"prefix": "Tree",
+		"body": [
 			"template<class W>",
 			"struct WeightedTree{",
 			"\tstruct Edge{",

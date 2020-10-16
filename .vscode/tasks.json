@@ -6,8 +6,9 @@
             "label": "build",
             "command": "g++",
             "args": [
-                "-O2",
                 "-std=c++14",
+                "-g3",
+                "-ggdb",
                 "${file}"
             ],
             "options": {
@@ -16,7 +17,10 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "group": "build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
             "presentation": {
                 "reveal": "silent",
                 "clear": true
