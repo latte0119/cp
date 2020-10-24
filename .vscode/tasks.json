@@ -7,8 +7,7 @@
             "command": "g++",
             "args": [
                 "-std=c++14",
-                "-g3",
-                "-ggdb",
+                "-g",
                 "${file}"
             ],
             "options": {
@@ -17,13 +16,13 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
             "presentation": {
                 "reveal": "silent",
                 "clear": true
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
             }
         }
     ]

@@ -1,3 +1,3 @@
 #!/bin/sh
-pbpaste | ./a.out
+xclip -o -selection clipboard | ./a.out
 
