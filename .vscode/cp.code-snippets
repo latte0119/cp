@@ -1,68 +1,24 @@
 {
-	"scan_1int":{
-		"prefix":"s",
-		"body":[
-			"scanf(\"%lld\",&${1:a});",
-		]
+	"init": {
+		"prefix": "init",
+		"body": "#pragma GCC target(\"avx2\")\n#pragma GCC optimize(\"O3\")\n#pragma GCC optimize(\"unroll-loops\")\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define int long long\n\n#define rep(i, n) for (int i = 0; i < (n); i++)\n#define loop(i, a, b) for (int i = (a); i < (b); i++)\n#define pb push_back\n#define eb emplace_back\n#define all(v) (v).begin(), (v).end()\n#define fi first\n#define se second\n\nusing vint = vector<int>;\nusing pint = pair<int, int>;\nusing vpint = vector<pint>;\n\ntemplate <typename A, typename B>\ninline void chmin(A& a, B b) {\n    if (a > b) a = b;\n}\ntemplate <typename A, typename B>\ninline void chmax(A& a, B b) {\n    if (a < b) a = b;\n}\n\ntemplate <class A, class B>\nostream& operator<<(ostream& ost, const pair<A, B>& p) {\n    ost << \"{\" << p.first << \",\" << p.second << \"}\";\n    return ost;\n}\n\ntemplate <class T>\nostream& operator<<(ostream& ost, const vector<T>& v) {\n    ost << \"{\";\n    for (int i = 0; i < v.size(); i++) {\n        if (i) ost << \",\";\n        ost << v[i];\n    }\n    ost << \"}\";\n    return ost;\n}\n\ninline int topbit(unsigned long long x) {\n    return x ? 63 - __builtin_clzll(x) : -1;\n}\n\ninline int popcount(unsigned long long x) {\n    return __builtin_popcountll(x);\n}\n\ninline int parity(unsigned long long x) {\n    return __builtin_parity(x);\n}\n\ntemplate <typename F>\nclass\n    FixPoint : private F {\n   public:\n    explicit constexpr FixPoint(F&& f) noexcept\n        : F{std::forward<F>(f)} {}\n\n    template <typename... Args>\n    constexpr decltype(auto)\n    operator()(Args&&... args) const {\n        return F::operator()(*this, std::forward<Args>(args)...);\n    }\n};\n\nnamespace {\ntemplate <typename F>\ninline constexpr decltype(auto)\nmakeFixPoint(F&& f) noexcept {\n    return FixPoint<F>{std::forward<F>(f)};\n}\n}  // namespace\n\nsigned main() {\n    return 0;\n}",
+		"description": ""
 	},
-	"scan_2int":{
-		"prefix":"ss",
-		"body":[
-			"scanf(\"%lld%lld\",&${1:a},&${2:b});",
-		]
-	},
-	"scan_3int":{
-		"prefix":"sss",
-		"body":[
-			"scanf(\"%lld%lld%lld\",&${1:a},&${2:b},&${3:c});",
-		]
-	},
-	"scan_4int":{
-		"prefix":"ssss",
-		"body":[
-			"scanf(\"%lld%lld%lld%lld\",&${1:a},&${2:b},&${3:c},&${4:d});",
-		]
-	},
-
-	"dump_1":{
-		"prefix":"d",
-		"body":[
-			"cout<<${1:a}<<endl;"
-		]
-	},
-
-	"latte":{
-		"prefix":"l",
-		"body":[
-			"cout<<\"latte\"<<endl;",
-		]
-	},
-
-	"priority_queue":{
-		"prefix":"pq",
-		"body":[
-			"priority_queue<${1:pint},vector<${1:pint}>,greater<${1:pint}>>${2:que};",
-		]
-	},
-
-
-	"INF":{
-		"prefix":"INF",
-		"body":[
+	"INF": {
+		"prefix": "INF",
+		"body": [
 			"const int INF=1001001001;"
 		]
 	},
-	"INFLL":{
-		"prefix":"INFLL",
-		"body":[
+	"INFLL": {
+		"prefix": "INFLL",
+		"body": [
 			"const int INF=1001001001001001001;"
 		]
 	},
-
-	
-	"GCDLCM":{
-		"prefix":"gcdlcm",
-		"body":[
+	"GCDLCM": {
+		"prefix": "gcdlcm",
+		"body": [
 			"long long gcd(long long a,long long b){",
 			"\twhile(b){",
 			"\t\tswap(a%=b,b);",
@@ -74,5 +30,4 @@
 			"}",
 		]
 	},
-	
 }
